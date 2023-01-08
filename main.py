@@ -1,16 +1,33 @@
-# import turtle
-import turtle
 
-#make list of color
-col =("yellow","red","orange","white","blue","green")
+import turtle as t
+import colorsys
 
-t =turtle.Turtle()
-screen =turtle.Screen()
-screen.bgcolor("black")
-t.speed(30)
+ t.bgcolor("black")
+ t.speed("fastest")
 
-for i in range(150):
-    t.color(col[i%6])# choose color from col 
-    t.forward(i*4)#length of line
-    t.left(150)# angle of line
-    t.width(4) # width of line
+ t.tracer(100)
+ t.pencol("darkviolet")
+ hue = 0.7
+ t.hideturtle()
+
+   def func():
+       global hue
+       for i in range(4):
+           global hue
+           for i in range(4):
+               color = colorsys.hsv_to_rgb(hue, 1, 1
+               hue+=0.001
+               t.fillcolor(color)
+               t.begin_fill()
+               t.fd(100)
+               t.right(18)
+               t.fd(100)
+               t.lt(22)
+               t.end_fill()
+
+   for j in range(400):
+       func()
+       t.goto(8, 8)
+       t.rt(188)
+
+   t.exitonclick()
